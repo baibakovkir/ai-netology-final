@@ -141,8 +141,8 @@ pytest
 python -m build
 ```
 
-GitHub Actions выполняет эти проверки и дополнительно собирает Docker-образ на каждый Pull
-Request и push в `main`. Подробные ручные сценарии находятся в [TESTING.md](TESTING.md).
+GitHub Actions выполняет эти проверки и дополнительно собирает Docker-образ на каждый push и
+Pull Request. Подробные ручные сценарии находятся в [TESTING.md](TESTING.md).
 
 ## Демонстрация
 
