@@ -68,12 +68,9 @@ docker compose up --build
 
 1. `success.png` — успешный LLM-ответ;
 2. `validation.png` — HTTP 422;
-3. `cached.png` — повторный запрос с `cached=true`.
-
-Перед сдачей необходимо дополнить материалы:
-
-1. `fallback.png` — HTTP 503 с `source=fallback` при пустом или неверном API-ключе;
-2. `ci.png` — успешно завершенный GitHub Actions workflow.
+3. `cached.png` — повторный запрос с `cached=true`;
+4. `fallback.png` — HTTP 503 с `source=fallback` при недоступной модели;
+5. `ci.png` — успешно завершенный GitHub Actions workflow.
 
 Запуск сервиса подтверждается доступностью Swagger UI на существующих снимках. При желании можно
 добавить отдельный `startup.png` с выводом `docker compose up` и успешным `/health`.

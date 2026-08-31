@@ -160,6 +160,16 @@ Pull Request. Подробные ручные сценарии находятс�
 
 ![Cache hit](screenshots/cached.png)
 
+При недоступности внешней модели сервис возвращает полезный fallback (`503`,
+`source=fallback`):
+
+![Fallback при недоступности LLM](screenshots/fallback.png)
+
+CI успешно выполняет линтинг, проверку форматирования, тесты, сборку Python-пакета и
+Docker-образа:
+
+![Успешный GitHub Actions workflow](screenshots/ci.png)
+
 ## Структура
 
 ```text
