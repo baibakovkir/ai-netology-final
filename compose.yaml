@@ -1,0 +1,30 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENVIRONMENT: ${APP_ENVIRONMENT:-dev}
+      APP_LOG_LEVEL: ${APP_LOG_LEVEL:-INFO}
+      APP_LLM_BASE_URL: ${APP_LLM_BASE_URL:-https://api.openai.com/v1}
+      APP_LLM_API_KEY: ${APP_LLM_API_KEY:-}
+      APP_LLM_MODEL: ${APP_LLM_MODEL:-gpt-4o-mini}
+      APP_LLM_CONNECT_TIMEOUT_SECONDS: ${APP_LLM_CONNECT_TIMEOUT_SECONDS:-5}
+      APP_LLM_READ_TIMEOUT_SECONDS: ${APP_LLM_READ_TIMEOUT_SECONDS:-30}
+      APP_LLM_RETRIES: ${APP_LLM_RETRIES:-2}
+      APP_LLM_RETRY_BACKOFF_SECONDS: ${APP_LLM_RETRY_BACKOFF_SECONDS:-0.25}
+      APP_CACHE_TTL_SECONDS: ${APP_CACHE_TTL_SECONDS:-300}
+      APP_CACHE_MAX_ENTRIES: ${APP_CACHE_MAX_ENTRIES:-1024}
+      APP_PROMPT_VERSION: ${APP_PROMPT_VERSION:-v1}
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2)"
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+
