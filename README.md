@@ -1,5 +1,7 @@
 # LLM Summarizer
 
+[![CI](https://github.com/baibakovkir/ai-netology-final/actions/workflows/ci.yml/badge.svg)](https://github.com/baibakovkir/ai-netology-final/actions/workflows/ci.yml)
+
 HTTP-сервис суммаризации русского и английского текста через любой API, совместимый с
 OpenAI Chat Completions. Проект демонстрирует разделение API, бизнес-логики и LLM-клиента,
 обработку отказов, TTL-кеш, безопасную конфигурацию, тесты и CI.

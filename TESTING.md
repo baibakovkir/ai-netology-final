@@ -8,6 +8,7 @@
 - Ruff format check: пройден;
 - pytest: 18 тестов пройдено, покрытие 98%;
 - Python sdist и wheel: успешно собраны.
+- GitHub Actions: полный CI, включая Docker build, успешно пройден.
 
 Docker-сборку необходимо подтвердить в GitHub Actions или на машине с доступным Docker daemon.
 В текущем WSL-окружении исполняемый файл Docker Desktop недоступен по правам.
